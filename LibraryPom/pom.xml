@@ -32,10 +32,10 @@
 		<optumx.sdk.version>3.2.0</optumx.sdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<ifms.project.code.version>0.0.1-SNAPSHOT</ifms.project.code.version>
-     <findbugs.version>2.5.2</findbugs.version>
-     <checkstyle.version>2.9.1</checkstyle.version>
-     <surefire.reportplugin.version>2.12.4</surefire.reportplugin.version>
-     <cobertura.version>2.5.2</cobertura.version>
+     <findbugs.version>3.0.0</findbugs.version>
+     <checkstyle.version>2.13</checkstyle.version>
+     <surefire.reportplugin.version>2.17</surefire.reportplugin.version>
+     <cobertura.version>2.6</cobertura.version>
 	</properties>
 
 	<dependencies>

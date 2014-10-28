@@ -32,6 +32,10 @@
 		<optumx.sdk.version>3.2.0</optumx.sdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<ifms.project.code.version>0.0.1-SNAPSHOT</ifms.project.code.version>
+     <findbugs.version>2.5.2</findbugs.version>
+     <checkstyle.version>2.9.1</checkstyle.version>
+     <surefire.reportplugin.version>2.12.4</surefire.reportplugin.version>
+     <cobertura.version>2.5.2</cobertura.version>
 	</properties>
 
 	<dependencies>
@@ -205,27 +209,52 @@
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.6.3.201306030806</version>
-				<executions>
-					<execution>
-						<id>pre-unit-test</id>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>post-unit-test</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+     <plugins>
+        <plugin>
+           <groupId>org.codehaus.mojo</groupId>
+           <artifactId>findbugs-maven-plugin</artifactId>
+           <version>${findbugs.version}</version>
+        </plugin>
+        <plugin>
+           <groupId>org.codehaus.mojo</groupId>
+           <artifactId>cobertura-maven-plugin</artifactId>
+           <version>${cobertura.version}</version>
+           <configuration>
+               <formats>
+                   <format>xml</format>
+               </formats>
+           </configuration>
+        </plugin>
+     </plugins>
+  </build>
+
+  <reporting>
+     <plugins>
+        <plugin>
+           <groupId>org.codehaus.mojo</groupId>
+           <artifactId>findbugs-maven-plugin</artifactId>
+           <version>${findbugs.version}</version>
+        </plugin>
+        <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-checkstyle-plugin</artifactId>
+           <version>${checkstyle.version}</version>
+        </plugin>
+        <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-surefire-report-plugin</artifactId>
+           <version>${surefire.reportplugin.version}</version>
+        </plugin>
+        <plugin>
+           <groupId>org.codehaus.mojo</groupId>
+           <artifactId>cobertura-maven-plugin</artifactId>
+           <version>${cobertura.version}</version>
+           <configuration>
+               <formats>
+                   <format>xml</format>
+               </formats>
+           </configuration>
+        </plugin>
+      </plugins>
+   </reporting>
 </project>

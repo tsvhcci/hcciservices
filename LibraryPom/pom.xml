@@ -534,7 +534,7 @@
                         <version>${pmd.version}</version>
                         <configuration>
                             <targetJdk>1.7</targetJdk>
-                            <configlocation>PMDRulseset.xml</configlocation>
+                            <!-- <configlocation>PMDRulseset.xml</configlocation> -->
                         </configuration>
                     </plugin>
                     
@@ -545,7 +545,7 @@
                         <version>${checkstyle.version}</version>
                         <configuration>
                             <targetJdk>1.7</targetJdk>
-                            <configLocation>UHG_CheckstyleRules.xml</configLocation>
+                           <!--  <configLocation>UHG_CheckstyleRules.xml</configLocation> -->
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                         </configuration>
                         <reportSets>
@@ -576,8 +576,8 @@
                                 </xmlOutputDirectory>
                                 <threshold>High|Normal|Low|Exp|Ignore</threshold>
                                 <effort>Min|Default|Max</effort>
-                            <excludeFilterFile>FindbugsExcludeFilter.xml</excludeFilterFile>
-                            <includeFilterFile>FindbugsIncludeFilter.xml</includeFilterFile>
+                            <!-- <excludeFilterFile>FindbugsExcludeFilter.xml</excludeFilterFile>
+                            <includeFilterFile>FindbugsIncludeFilter.xml</includeFilterFile> -->
                         </configuration>
                     </plugin>
                     <plugin>
@@ -585,6 +585,7 @@
 						<artifactId>cobertura-maven-plugin</artifactId>
 						<version>${cobertura.version}</version>
 						<configuration>
+							 <targetJdk>1.7</targetJdk>
 							<formats>
 								<format>xml</format>
 							</formats>
